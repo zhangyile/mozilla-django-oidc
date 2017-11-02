@@ -126,10 +126,11 @@ class OIDCAuthenticationRequestView(View):
             'response_type': 'code',
             'scope': import_from_settings('OIDC_RP_SCOPES', 'openid email'),
             'client_id': self.OIDC_RP_CLIENT_ID,
-            'redirect_uri': absolutify(
-                request,
-                reverse('oidc_authentication_callback')
-            ),
+            #'redirect_uri': absolutify(
+            #    request,
+            #    reverse('oidc_authentication_callback')
+            #),
+            'redirect_uri': 'https://test.zyl.com/test/',
             'state': state,
         }
 
